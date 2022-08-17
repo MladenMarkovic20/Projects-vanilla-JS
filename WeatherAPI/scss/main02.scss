@@ -1,0 +1,160 @@
+@import "./resets";
+@import "./variables";
+
+// ---------------------MIXINS--------------//
+@mixin header__footer {
+    font-family: "Dancing Script";
+    color: $text-color;
+    background-color: $background-primary;
+    opacity: 0.7;
+}
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+@mixin backgroundColor_Container($color1, $color2) {
+    background-color: $color1;
+    color: $color2;
+    font-family: "Roboto";
+}
+@mixin container-dimensions {
+    height: 30%;
+    width: 40vw;
+    border-radius: 1rem;
+    margin: 3rem 1rem;
+    padding: 1rem;
+    opacity: 0.8;
+}
+@mixin flex-spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// --------------------BACKGROUND-------------------//
+html {
+    background-image: linear-gradient(
+            270deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(255, 255, 255, 0.3)
+        ),
+        url("../pics/background2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-weight: map-get($font-weights, regular);
+}
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+// -------------------HEADER------------------//
+h1 {
+    @include header__footer();
+    font-size: 5rem;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+}
+.forecast__headline--data {
+    text-decoration: underline;
+    padding: 0.2rem 0;
+}
+li,
+p {
+    font-size: 1.25rem;
+}
+.img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+// -------------------INPUT FIELD------------------//
+.forecast__main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+.forecast__input {
+    @include backgroundColor_Container($text-color, $secondary-color);
+    @include container-dimensions();
+    @include flex-spaceBetween();
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    label {
+        font-weight: map-get($font-weights, bold);
+    }
+    button {
+        background-color: $background-primary;
+        border-radius: 15px;
+        border: 1px solid $text-color;
+        display: inline-block;
+        cursor: pointer;
+        color: $text-color;
+        font-size: 1.25rem;
+        padding: 7px 25px;
+    }
+    input {
+        padding: 5px;
+        font-size: 1.25rem;
+        border-width: 1px;
+        border-color: $secondary-color;
+        background-color: $text-color;
+        color: $secondary-color;
+        border-style: solid;
+        border-radius: 50px;
+        text-align: center;
+    }
+}
+// -------------------TODAY FORECAST------------------//
+.forecast__data {
+    @include backgroundColor_Container($text-color, $secondary-color);
+    @include container-dimensions();
+    font-size: 1.5rem;
+    visibility: hidden;
+}
+li {
+    display: inline-block;
+}
+
+// -------------------FOOTER------------------//
+.footer {
+    @include header__footer();
+    @include flex-center();
+    font-size: 1.25rem;
+    margin: 0;
+    height: 5rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    .footer__text,
+    .footer__icons {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+
+        align-items: center;
+    }
+    .footer__icons i {
+        margin: 2rem;
+        font-size: 2rem;
+        color: $text-color;
+    }
+}
+
+.footer__text li {
+    border-right: 0.1rem solid white;
+    padding: 0rem 1rem;
+}
+.footer__text li:last-child {
+    border-right: 0;
+}

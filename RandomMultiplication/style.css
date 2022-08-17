@@ -1,0 +1,14 @@
+.kolona {
+  float: left;
+  width: 30%;
+}
+.blok {
+  display: block;
+  margin-bottom: 10px;
+}
+span {
+  border: 1px solid #000;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px;
+}

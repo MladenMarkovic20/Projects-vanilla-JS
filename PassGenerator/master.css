@@ -1,0 +1,23 @@
+span {
+  border: 2px solid #000;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  font-size: 3em;
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+label {
+  /* display: block; */
+  margin: 20px;
+}
+input {
+  width: 30px;
+}
+
+button {
+  display: block;
+  margin: 20px;
+}
